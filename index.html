@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+    <div class="main">
+        <div class="top">
+            <h1>Temperature Converter</h1>
+            <input type="text" id="output">
+        </div>
+    <div class="middle">
+        <div class="left">
+            <label for="">Degree</label>
+            <input type="text" id="input">
+        </div>
+    <div class="right">
+        <label for="">Type</label>
+        <select name="" id="temperatures" autocomplete="on">
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="celsius">celsius</option>
+        </select>
+    </div>
+    </div>
+    <div class="bottom">
+        <button onclick="converter()">convert</button>
+    <button onclick="reset()">Reset</button>
+    </div>
+    </div>
+    </section>
+    
+</body>
+<script>
+   function converter(){
+    var select=document.getElementById("temperatures");
+    var temperatute=select.options[select.selectedIndex].value;
+    if(temperatute=="celsius"){
+        if(input.value!=""){
+            var fahren=((input.value*9/5) + 32)+"°F";
+        document.getElementById("output").value=fahren
+        }else{
+            alert("Please give some input");
+        }
+    } else{
+        if(input.value!=""){
+            var celsius=(input.value-32)/1.8+"°C";
+        document.getElementById("output").value=celsius;
+        }else{
+            alert("Please give some input");
+        }
+        
+    }
+}
+function reset(){
+    document.getElementById("input").value=""
+    document.getElementById("output").value=""
+}
+</script>
+</html>
